@@ -41,17 +41,17 @@
     }
   }
 
-  @include test("it should output a font-size and line-height when declaring as important") {
+  @include test("it should output a font-size in pixels when declaring as important") {
 
     @include assert() {
 
       @include output {
-        @include inuit-font-size(21px, 2.5, true);
+        @include inuit-font-size(21px, $important: true);
       }
 
       @include expect {
         font-size: 1.3125rem !important;
-        line-height: 2.5 !important;
+        line-height: 1.14286 !important;
       }
     }
   }
