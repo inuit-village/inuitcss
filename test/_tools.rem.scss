@@ -10,13 +10,13 @@
 
     $test: inuit-rem(18px);
     $expect: 1.125rem;
-    @include assert-equal($test, $expect, "Returns the em equivalant for pixel value");        
+    @include assert-equal($test, $expect, "Returns the rem equivalant for pixel value");        
   }
 }
 
 @include test-module("[mixin] inuit-rem") {
 
-  @include test("it should output a property with an em value converted from a pixel value") {
+  @include test("it should output a property with a rem value converted from a pixel value") {
 
     @include assert() {
 
