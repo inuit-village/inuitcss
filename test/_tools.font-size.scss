@@ -1,0 +1,54 @@
+@import "true";
+
+@import "../settings/settings.core";
+@import "../tools/tools.font-size";
+
+
+@include test-module("[mixin] inuit-font-size") {
+
+  @include test("it should output a font-size and line-height based on a given input") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(16px);
+      }
+
+      @include expect {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @include test("it should output a font-size and line-height when specifying a line-height") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(18px, 2);
+      }
+
+      @include expect {
+        font-size: 1.125rem;
+        line-height: 2;
+      }
+    }
+  }
+
+  @include test("it should output a font-size and line-height when declaring as important") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(21px, 2.5, true);
+      }
+
+      @include expect {
+        font-size: 1.3125rem !important;
+        line-height: 2.5 !important;
+      }
+    }
+  }
+}
+
