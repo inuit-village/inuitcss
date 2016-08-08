@@ -41,7 +41,7 @@
     }
   }
 
-  @include test("it should output a font-size in pixels when declaring as important") {
+  @include test("it should output a font-size as important when passing true") {
 
     @include assert() {
 
