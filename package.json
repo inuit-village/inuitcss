@@ -4,7 +4,8 @@
   "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
   "main": "example.main.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint",
+    "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,9 @@
   "homepage": "https://github.com/inuitcss/inuitcss#readme",
   "dependencies": {
     "sass-mq": "^3.2.9"
+  },
+  "devDependencies": {
+    "stylelint": "^7.1.0",
+    "stylelint-scss": "^1.3.4"
   }
 }
